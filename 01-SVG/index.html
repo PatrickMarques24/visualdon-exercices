@@ -40,16 +40,31 @@
   <h1>Animer des formes</h1>
 
   <h2>On click</h2>
+  <p>Cliquez sur le rectangle, il change de couleur à chaque clic ;)</p>
 
   <!-- Voir JS -->
 
   <h2>On hover</h2>
+  <p>Survolez le grand cercle du donut, ça va devenir un plus gros donut ;)</p>
 
   <!-- Voir JS -->
 
   <h2>Prenez la première lettre de votre prénom que vous avez créée ci-dessus. Faite bouger une forme de votre choix
     le
     long de la lettre</h2>
+  <svg>
+    <!-- Dessine le chemin en gris, avec 2 cercles aux extrémités -->
+    <path d="M 5 50 V 5 H 50 V 25 H 5" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath" />
+
+    <!-- Cercle rouge qui sera déplacé le long du chemin. -->
+    <circle cx="" cy="" r="5" fill="red">
+
+      <!-- Définit l'animation -->
+      <animateMotion dur="6s" repeatCount="indefinite">
+        <mpath xlink:href="#theMotionPath" />
+      </animateMotion>
+    </circle>
+  </svg>
 
 
 </body>
