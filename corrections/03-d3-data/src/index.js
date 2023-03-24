@@ -14,14 +14,17 @@ Promise.all([
     .then(([posts, users]) =>  {
 
         // 1. Nouvel objet
-        let result1 =  users.map(usr => {
+        let result1 =  users.forEach(usr => {
             let posts_filtered = posts.filter(post => post.userId === usr.id)
+
+            console.log("Posts filtrés", posts_filtered);
+
             let new_object = {
                 "nom_utilisateur" : usr.name,
                 "ville" : usr.address.city,
                 "titres_posts" : posts_filtered.map(post => post.title),
             }
-            return new_object;post
+            return new_object;
         });
 
         console.log("Nouvel objet", result1);
